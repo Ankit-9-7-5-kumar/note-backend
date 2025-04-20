@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #notesList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #notesList li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+        .success {
+            color: #4CAF50;
+        }
+        .error {
+            color: #f44336;
+        }
+        .auth-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .auth-box {
+            flex: 1;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notes App</h1>
+    
+    <div class="auth-section">
+        <div class="auth-box">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <div id="registerResult"></div>
+        </div>
+        
+        <div class="auth-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginResult"></div>
+        </div>
+    </div>
+
+    <div id="notesSection" style="display: none;">
+        <h2>Create Note</h2>
+        <form id="noteForm">
+            <input type="text" id="noteTitle" placeholder="Title" required>
+            <textarea id="noteContent" placeholder="Content" required></textarea>
+            <button type="submit">Add Note</button>
+        </form>
+        <div id="noteResult"></div>
+
+        <hr>
+        <h2>My Notes</h2>
+        <ul id="notesList"></ul>
+    </div>
+    <!-- Logout button wrapper -->
+<div id="logoutSection" style="display: none;">
+    <button onclick="handleLogout()" id="logoutBtn">🚪 Logout</button>
+  </div>  
+    <script src="script.js"></script>
+</body>
+</html>
+
